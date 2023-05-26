@@ -1,8 +1,8 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import JadwalList from "./components/JadwalList.jsx";
-import AddJadwal from "./components/AddJadwal.jsx";
-import EditJadwal from "./components/EditJadwal.jsx";
+import JadwalList from "./components/JadwalList.js";
+import AddJadwal from "./components/AddJadwal.js";
+import EditJadwal from "./components/EditJadwal.js";
 
 function App() {
   return (
