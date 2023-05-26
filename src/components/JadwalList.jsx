@@ -6,14 +6,14 @@ import useSWR, { useSWRConfig } from "swr";
 const JadwalList = () => {
   const { mutate } = useSWRConfig();
   const fetcher = async () => {
-    const response = await axios.get("https://jadwal-express.vercel.app/jadwal");
+    const response = await axios.get("https://jadwal-express.vercel.app/api/v1/jadwal");
     return response.data;
   };
   const data = useSWR("jadwal", fetcher);
   if (!data) return <h2>Loading...</h2>;
 
   const deleteJadwal = async (jadwalId) => {
-    await axios.delete(`https://jadwal-express.vercel.app/jadwal/${jadwalId}`);
+    await axios.delete(`https://jadwal-express.vercel.app/api/v1/jadwal/${jadwalId}`);
     mutate("jadwals");
   };
   return (
