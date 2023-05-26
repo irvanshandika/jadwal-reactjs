@@ -11,7 +11,7 @@ const AddJadwal = () => {
 
   const saveJadwal = async (e) => {
     e.preventDefault();
-    await axios.post("https://backend-peach-six.vercel.app/jadwal", {
+    await axios.post("https://jadwal-express.vercel.app/jadwal", {
       hari: hari,
       waktu: waktu,
       mataKuliah: mataKuliah,
