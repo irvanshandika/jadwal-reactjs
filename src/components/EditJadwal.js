@@ -29,7 +29,7 @@ const EditJadwal = () => {
       mataKuliah: mataKuliah,
       ruangan: ruangan,
     });
-    navigate("/");
+    navigate("/dashboard");
   };
 
   return (

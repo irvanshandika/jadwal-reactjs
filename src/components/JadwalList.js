@@ -1,9 +1,10 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import useSWR, { useSWRConfig } from "swr";
 
 const JadwalList = () => {
+  const navigate = useNavigate();
   const { mutate } = useSWRConfig();
   const fetcher = async () => {
     const response = await axios.get("https://jadwal-express.vercel.app/api/jadwal");
@@ -15,6 +16,7 @@ const JadwalList = () => {
   const deleteJadwal = async (jadwalId) => {
     await axios.delete(`https://jadwal-express.vercel.app/api/jadwal/${jadwalId}`);
     mutate("jadwals");
+    navigate("/dashboard");
   };
   return (
     <div className="flex flex-col mt-5 justify-center mx-auto items-center">

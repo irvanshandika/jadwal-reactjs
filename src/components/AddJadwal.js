@@ -17,7 +17,7 @@ const AddJadwal = () => {
       mataKuliah: mataKuliah,
       ruangan: ruangan,
     });
-    navigate("/");
+    navigate("/dashboard");
   };
 
   return (
