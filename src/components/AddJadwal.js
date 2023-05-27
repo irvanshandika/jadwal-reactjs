@@ -49,7 +49,7 @@ const AddJadwal = () => {
           <button type="submit" className="bg-blue-400 hover:bg-blue-500 w-full text-black hover:text-white h-10 rounded-lg">
             Simpan
           </button>
-          <Link to={"/"} className="py-4">
+          <Link to={"/dashboard"} className="py-4">
             <button type="submit" className="bg-gray-300 hover:bg-gray-500 w-full text-black hover:text-white h-10 rounded-lg">
               Kembali
             </button>
