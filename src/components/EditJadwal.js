@@ -12,7 +12,7 @@ const EditJadwal = () => {
 
   useEffect(() => {
     const getJadwalById = async () => {
-      const response = await axios.get(`https://jadwal-express.vercel.app/api/v1/jadwal/${id}`);
+      const response = await axios.get(`https://jadwal-express.vercel.app/api/jadwal/${id}`);
       setHari(response.data.hari);
       setWaktu(response.data.waktu);
       setMataKuliah(response.data.mataKuliah);
@@ -23,7 +23,7 @@ const EditJadwal = () => {
 
   const updateJadwal = async (e) => {
     e.preventDefault();
-    await axios.patch(`https://jadwal-express.vercel.app/api/v1/jadwal/${id}`, {
+    await axios.patch(`https://jadwal-express.vercel.app/api/jadwal/${id}`, {
       hari: hari,
       waktu: waktu,
       mataKuliah: mataKuliah,
