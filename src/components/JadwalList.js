@@ -23,47 +23,58 @@ const JadwalList = () => {
   };
   return (
     <>
-      <div className="flex flex-col mt-5 justify-center mx-auto items-center">
-        <div className="w-full">
-          <Link to="/add">
-            <button className="bg-black text-white hover:bg-gray-600 hover:text-gray-300 mx-11 w-32 h-10 rounded-lg">Add Jadwal</button>
-          </Link>
-          <div className="relative shadow rounded-lg mt-3">
-            <div className="overflow-x-auto">
-              <table className="w-full text-sm text-left text-gray-500">
-                <thead className="text-xs text-gray-700 uppercase bg-gray-100">
-                  <tr>
-                    <th className="px-1 py-3 text-center">Hari</th>
-                    <th className="px-3 py-3">Waktu</th>
-                    <th className="px-3 py-3">Mata Kuliah</th>
-                    <th className="px-3 py-3">Ruangan</th>
-                    <th className="px-1 py-3 text-center">Aksi</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {data?.data?.map((jadwal, index) => (
-                    <tr className="bg-white border-b" key={jadwal.id}>
-                      {/* <td className="px-1 py-3 text-center">{index + 1}</td> */}
-                      <td className="px-1 py-3 font-md text-gray-900 text-center">{jadwal.hari}</td>
-                      <td className="px-3 py-3 font-md text-gray-900">{jadwal.waktu}</td>
-                      <td className="px-3 py-3 font-md text-gray-900">{jadwal.mataKuliah}</td>
-                      <td className="px-3 py-3 font-md text-gray-900">{jadwal.ruangan}</td>
-                      <td className="px-1 py-3 text-center">
-                        <Link to={`/edit/${jadwal.id}`} className="px-2 py-1">
-                          <button className="bg-green-400 hover:bg-green-500 text-white w-14 h-7 font-medium rounded-full">Edit</button>
-                        </Link>
-                        <button onClick={() => deleteJadwal(jadwal.id)} className="bg-red-400 hover:bg-red-500 text-white w-14 h-7 font-medium rounded-full">
-                          Delete
-                        </button>
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
+      <div className="mx-auto max-w-screen-xl px-4 lg:px-12">
+        <div className="bg-white dark:bg-gray-800 relative shadow-md sm:rounded-lg overflow-hidden">
+          <div className="flex flex-col mt-5 justify-center mx-auto items-center">
+            <div className="w-full">
+              <Link to="/add">
+                <button className="bg-black text-white hover:bg-gray-600 hover:text-gray-300 mx-11 w-32 h-10 rounded-lg">
+                  Add Jadwal
+                  <i class="pl-1 fa-solid fa-plus"></i>
+                </button>
+              </Link>
+              <div className="relative shadow rounded-lg mt-3">
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm text-left text-gray-500">
+                    <thead className="text-xs text-gray-700 uppercase bg-gray-100">
+                      <tr>
+                        <th className="px-1 py-3 text-center">Hari</th>
+                        <th className="px-3 py-3">Waktu</th>
+                        <th className="px-3 py-3">Mata Kuliah</th>
+                        <th className="px-3 py-3">Ruangan</th>
+                        <th className="px-1 py-3 text-center">Aksi</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {data?.data?.map((jadwal, index) => (
+                        <tr className="bg-white border-b" key={jadwal.id}>
+                          <td className="px-1 py-3 font-md text-gray-900 text-center">{jadwal.hari}</td>
+                          <td className="px-3 py-3 font-md text-gray-900">{jadwal.waktu}</td>
+                          <td className="px-3 py-3 font-md text-gray-900">{jadwal.mataKuliah}</td>
+                          <td className="px-3 py-3 font-md text-gray-900">{jadwal.ruangan}</td>
+                          <td className="px-1 py-3 text-center">
+                            <Link to={`/edit/${jadwal.id}`} className="px-2 py-1">
+                              <button className="bg-green-400 hover:bg-green-500 text-white text-xs w-16 h-7 font-medium rounded-full">
+                                <i class="pr-1 fa-solid fa-pen"></i>
+                                Edit
+                              </button>
+                            </Link>
+                            <button onClick={() => deleteJadwal(jadwal.id)} className="bg-red-400 hover:bg-red-500 text-white text-xs w-16 h-7 font-medium rounded-full">
+                              <i className="pr-1 fa-solid fa-trash-can"></i>
+                              Delete
+                            </button>
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
+
       <Footer />
     </>
   );
