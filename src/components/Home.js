@@ -2,8 +2,9 @@ import React from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import useSWR from "swr";
+import TableJadwal from "./TableJadwal.js";
 
-const JadwalList = () => {
+const Home = () => {
   const fetcher = async () => {
     const response = await axios.get("https://jadwal-express.vercel.app/api/jadwal");
     return response.data;
@@ -14,6 +15,7 @@ const JadwalList = () => {
   }
   return (
     <>
+      <TableJadwal />
       <section className="bg-gray-50 dark:bg-gray-900 p-3 sm:p-5">
         <div className="mx-auto max-w-screen-xl px-4 lg:px-12">
           <div className="bg-white dark:bg-gray-800 relative shadow-md sm:rounded-lg overflow-hidden">
@@ -76,4 +78,4 @@ const JadwalList = () => {
   );
 };
 
-export default JadwalList;
+export default Home;
