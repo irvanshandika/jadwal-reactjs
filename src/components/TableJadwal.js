@@ -286,9 +286,6 @@ function TableJadwal() {
               <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                 <tr>
                   <th scope="col" className="px-4 py-3">
-                    Kode
-                  </th>
-                  <th scope="col" className="px-4 py-3">
                     Hari
                   </th>
                   <th scope="col" className="px-4 py-3">
@@ -313,9 +310,6 @@ function TableJadwal() {
                     Nama Dosen
                   </th>
                   <th scope="col" className="px-4 py-3">
-                    Email Dosen
-                  </th>
-                  <th scope="col" className="px-4 py-3">
                     Zoom URL
                   </th>
                 </tr>
@@ -324,9 +318,8 @@ function TableJadwal() {
                 {Jadwal.map((jadwal) => (
                   <tr className="border-b dark:border-gray-700">
                     <th scope="row" className="px-4 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                      {jadwal.Kode}
+                      {jadwal.Hari}
                     </th>
-                    <td className="px-4 py-3">{jadwal.Hari}</td>
                     <td className="px-4 py-3">{jadwal.Waktu}</td>
                     <td className="px-4 py-3">{jadwal.MataKuliah}</td>
                     <td className="px-4 py-3">{jadwal.JenisKuliah}</td>
@@ -334,7 +327,6 @@ function TableJadwal() {
                     <td className="px-4 py-3">{jadwal.Kelas}</td>
                     <td className="px-4 py-3">{jadwal.Nik}</td>
                     <td className="px-4 py-3">{jadwal.NamaDosen}</td>
-                    <td className="px-4 py-3">{jadwal.EmailDosen}</td>
                     <td className="px-4 py-3">
                       <Link to={jadwal.ZoomURL}>
                         <button
