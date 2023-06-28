@@ -22,15 +22,13 @@ const Dashboard = () => {
   };
   return (
     <>
-      <section className="bg-gray-50 dark:bg-gray-900 p-3 sm:p-5">
+      <section className="bg-gray-900 p-3 sm:p-5">
         <div className="mx-auto max-w-screen-xl px-4 lg:px-12">
-          <div className="bg-white dark:bg-gray-800 relative shadow-md sm:rounded-lg overflow-hidden">
+          <div className="bg-gray-800 relative shadow-md sm:rounded-lg overflow-hidden">
             <div className="flex flex-col md:flex-row items-center justify-between space-y-3 md:space-y-0 md:space-x-4 p-4">
               <div className="w-full md:w-auto flex flex-col md:flex-row space-y-2 md:space-y-0 items-stretch md:items-center justify-end md:space-x-3 flex-shrink-0">
                 <Link to={"/"}>
-                  <button
-                    type="button"
-                    className="flex items-center justify-center text-white bg-black hover:bg-gray-600 focus:ring-4 focus:ring-primary-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-primary-600 dark:hover:bg-primary-700 focus:outline-none dark:focus:ring-primary-800">
+                  <button type="button" className="flex items-center justify-center text-white bg-black focus:ring-4 font-medium rounded-lg text-sm px-4 py-2 bg-primary-600 hover:bg-primary-700 focus:outline-none focus:ring-primary-800">
                     <ion-icon name="caret-back-circle" className="mr-2"></ion-icon>
                     <span className="ml-2">Kembali</span>
                   </button>
@@ -38,7 +36,7 @@ const Dashboard = () => {
                 <Link to={"/add"}>
                   <button
                     type="button"
-                    className="flex items-center justify-center text-white bg-black hover:bg-gray-600 focus:ring-4 focus:ring-primary-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-primary-600 dark:hover:bg-primary-700 focus:outline-none dark:focus:ring-primary-800">
+                    className="flex items-center justify-center text-white bg-black hover:bg-gray-600 focus:ring-4 focus:ring-primary-300 font-medium rounded-lg text-sm px-4 py-2 bg-primary-600 hover:bg-primary-700 focus:outline-none focus:ring-primary-800">
                     Tambah Jadwal
                     <i class="pl-2 fa-solid fa-plus"></i>
                   </button>
@@ -46,8 +44,8 @@ const Dashboard = () => {
               </div>
             </div>
             <div className="overflow-x-auto">
-              <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
-                <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+              <table className="w-full text-sm text-left text-gray-400">
+                <thead className="text-xs uppercase  bg-gray-700 text-gray-400">
                   <tr>
                     <th scope="col" className="px-4 py-3">
                       Hari
@@ -68,8 +66,8 @@ const Dashboard = () => {
                 </thead>
                 <tbody>
                   {data?.data?.map((jadwal, index) => (
-                    <tr className="border-b dark:border-gray-700">
-                      <th scope="row" className="px-4 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                    <tr className="border-b border-gray-700">
+                      <th scope="row" className="px-4 py-3 font-medium whitespace-nowrap text-white">
                         {jadwal.hari}
                       </th>
                       <td className="px-4 py-3">{jadwal.waktu}</td>
